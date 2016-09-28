@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hackathon-viagens-ngrok
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    protocol: TCP
+    name: http
+  - port: 443
+    protocol: TCP
+    name: https
+  - port: 4040
+    protocol: TCP
+    name: ngrok
+  selector:
+    app: hackathon-viagens-ngrok
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: hackathon-viagens-ngrok
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hackathon-viagens-ngrok
+    spec:
+      containers:
+      - name: hackathon-viagens-ngrok
+        image: gcr.io/yebo-project/hackathon-viagens-ngrok:latest
+        ports:
+        - containerPort: 443
+        - containerPort: 80
+        - containerPort: 4040
+

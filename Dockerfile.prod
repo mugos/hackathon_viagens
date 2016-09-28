@@ -1,0 +1,19 @@
+FROM elixir
+
+ENV MIX_ENV=prod
+
+WORKDIR /app
+
+ADD ./ /app
+
+RUN mix local.hex --force
+
+RUN mix local.rebar --force
+
+RUN mix deps.get
+
+RUN MIX_ENV=prod mix compile
+
+EXPOSE 80 443
+
+CMD mix run --no-halt

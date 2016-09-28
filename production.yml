@@ -1,0 +1,14 @@
+version: '2'
+services:
+  web:
+    image: hackathon-viagens
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+
+  ngrok:
+    image: hackathon-viagens-ngrok
+    build:
+      context: .
+      dockerfile: Dockerfile.ngrok
+

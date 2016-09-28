@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: hackathon-viagens-rethinkdb
+  name: hackathon-viagens-rethinkdb
+spec:
+  ports:
+    - port: 8080
+      protocol: TCP
+      name: http
+    - port: 28015
+      targetPort: 28015
+      name: port2
+    - port: 29015
+      targetPort: 29015
+      name: port3
+  selector:
+    name: hackathon-viagens-rethinkdb
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  labels:
+    name: hackathon-viagens-rethinkdb
+  name: hackathon-viagens-rethinkdb
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: hackathon-viagens-rethinkdb
+    spec:
+      containers:
+      - image: rethinkdb
+        name: rethinkdb
+        env:
+          - name: HELLLO
+            value: hy
+        ports:
+        - name: sd-rethink
+          containerPort: 8080
+          hostPort: 8080
+          containerPort: 28015
+          hostPort: 28015
+          containerPort: 29015
+          hostPort: 29015

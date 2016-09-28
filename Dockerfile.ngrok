@@ -1,0 +1,2 @@
+FROM wernight/ngrok
+CMD ngrok http hackathon-viagens:80
