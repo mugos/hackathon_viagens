@@ -1,14 +1,26 @@
 version: '2'
 services:
   web:
-    build: .
+    build: ./web
+    ports:
+      - 80:8000
+    working_dir: /hackaton_viagens_web
+    command: npm run dev
+    volumes:
+      - ./web:/hackaton_viagens
+    links:
+      - api
+    depends_on:
+      - api
+
+  api:
+    build: ./api
     ports:
       - 8000:8000
-      - 80:8000
-    working_dir: /hackaton_viagens
+    working_dir: /hackaton_viagens_api
     command: mix run --no-halt
     volumes:
-      - ./:/hackaton_viagens
+      - ./api:/hackaton_viagens
     depends_on:
       - rethinkdb # wait to be starded
 

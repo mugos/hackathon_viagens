@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hackathon-viagens-web
+  name: hackathon-viagens-api
 spec:
   type: LoadBalancer
   ports:
@@ -12,22 +12,22 @@ spec:
     protocol: TCP
     name: https
   selector:
-    app: hackathon-viagens-web
+    app: hackathon-viagens-api
 ---
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: hackathon-viagens-web
+  name: hackathon-viagens-api
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: hackathon-viagens-web
+        app: hackathon-viagens-api
     spec:
       containers:
-      - name: hackathon-viagens-web
-        image: gcr.io/yebo-project/hackathon-viagens-web:latest
+      - name: hackathon-viagens-api
+        image: gcr.io/yebo-project/hackathon-viagens-api:latest
         ports:
         - containerPort: 443
         - containerPort: 80

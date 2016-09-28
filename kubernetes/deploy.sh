@@ -26,8 +26,7 @@ docker tag hackathon-viagens "gcr.io/yebo-project/hackathon-viagens:latest"
 dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens:$VERSION"
 dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens:latest"
 
-# docker tag hackathon-viagens-ngrok "gcr.io/yebo-project/hackathon-viagens-ngrok:w
-:$VERSION"
+# docker tag hackathon-viagens-ngrok "gcr.io/yebo-project/hackathon-viagens-ngrok:$VERSION"
 # docker tag hackathon-viagens-ngrok "gcr.io/yebo-project/hackathon-viagens-ngrok:latest"
 # dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-ngrok:$VERSION"
 # dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-ngrok:latest"

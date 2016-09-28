@@ -1,10 +1,16 @@
 version: '2'
 services:
   web:
-    image: hackathon-viagens
+    image: hackathon-viagens-web
     build:
-      context: .
-      dockerfile: Dockerfile.prod
+      context: ./web
+      dockerfile: ./web/Dockerfile.prod
+
+  api:
+    image: hackathon-viagens-api
+    build:
+      context: ./api
+      dockerfile: ./api/Dockerfile.prod
 
   ngrok:
     image: hackathon-viagens-ngrok
