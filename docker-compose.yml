@@ -5,10 +5,10 @@ services:
     ports:
       - 8000:8000
       - 80:8000
-    working_dir: /app
+    working_dir: /hackaton_viagens
     command: mix run --no-halt
     volumes:
-      - ./:/app
+      - ./:/hackaton_viagens
     depends_on:
       - rethinkdb # wait to be starded
 
