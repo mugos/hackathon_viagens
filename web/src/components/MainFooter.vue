@@ -2,7 +2,7 @@
   <section class="footer main-footer">
     <section class="container"> 
       <section class="content has-text-centered">
-        Make with 3 by Hacklovers
+        Make with &lt;3 by Hacklovers
       </section>
     <!-- end .container -->
     </section>
