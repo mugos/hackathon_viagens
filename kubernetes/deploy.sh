@@ -21,14 +21,17 @@ VERSION=$(cat ../VERSION)
 
 docker-compose -f ../production.yml build
 
-docker tag hackathon-viagens "gcr.io/yebo-project/hackathon-viagens:$VERSION"
-docker tag hackathon-viagens "gcr.io/yebo-project/hackathon-viagens:latest"
-dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens:$VERSION"
-dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens:latest"
+docker tag hackathon-viagens-web "gcr.io/yebo-project/hackathon-viagens-web:$VERSION"
+docker tag hackathon-viagens-web "gcr.io/yebo-project/hackathon-viagens-web:latest"
 
-# docker tag hackathon-viagens-ngrok "gcr.io/yebo-project/hackathon-viagens-ngrok:$VERSION"
-# docker tag hackathon-viagens-ngrok "gcr.io/yebo-project/hackathon-viagens-ngrok:latest"
-# dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-ngrok:$VERSION"
-# dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-ngrok:latest"
+docker tag hackathon-viagens-api "gcr.io/yebo-project/hackathon-viagens-api:$VERSION"
+docker tag hackathon-viagens-api "gcr.io/yebo-project/hackathon-viagens-api:latest"
 
-echo "dg kubectl rolling-update hackathon-viagens --image=\"gcr.io/yebo-project/hackathon-viagens:$VERSION\""
+dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-api:$VERSION"
+dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-api:latest"
+
+dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-web:$VERSION"
+dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-web:latest"
+
+echo "dg kubectl rolling-update hackathon-viagens-api --image=\"gcr.io/yebo-project/hackathon-viagens-api:$VERSION\""
+echo "dg kubectl rolling-update hackathon-viagens-web --image=\"gcr.io/yebo-project/hackathon-viagens-web:$VERSION\""

@@ -14,9 +14,16 @@ dg() {
 
 docker-compose -f ../production.yml build
 
-docker tag hackathon-viagens "gcr.io/yebo-project/hackathon-viagens:latest"
+docker tag hackathon-viagens-web "gcr.io/yebo-project/hackathon-viagens-web:latest"
+docker tag hackathon-viagens-api "gcr.io/yebo-project/hackathon-viagens-api:latest"
 
-dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens:latest"
+dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-api:latest"
+dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-web:latest"
+
+docker tag hackathon-viagens-ngrok "gcr.io/yebo-project/hackathon-viagens-ngrok:$VERSION"
+docker tag hackathon-viagens-ngrok "gcr.io/yebo-project/hackathon-viagens-ngrok:latest"
+dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-ngrok:$VERSION"
+dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-ngrok:latest"
 
 dg kubectl create -f ./web.yaml
 # dg kubectl delete -f ./web.yaml
