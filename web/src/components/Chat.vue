@@ -1,10 +1,11 @@
 <template>
   <section class="container">
     <section class="chat__container">
-      <template v-for="message in messages">
+      <template v-for="message in currentMessages">
         <out-message v-if="message.self" :message="message"></out-message>
         <in-message v-else :message="message"></in-message>
       </template>
+
       <send-message></send-message>
     </section>
   </section>
@@ -17,6 +18,9 @@ import OutMessage from './OutMessage'
 import SendMessage from './SendMessage'
 
 //
+import { mapGetters } from 'vuex'
+
+//
 export default {
   // Use the components
   components: {
@@ -24,13 +28,8 @@ export default {
     OutMessage,
     SendMessage
   },
-  data () {
-    return {
-      messages: [
-        {text: 'Hey guy', self: false},
-        {text: 'Hey... Whats up?', self: true}
-      ]
-    }
+  computed: {
+    ...mapGetters(['currentMessages'])
   }
 }
 </script>
