@@ -21,5 +21,6 @@ export default {
 </script>
 
 <style lang="sass">
-@import './../node_modules/bulma/bulma'
+//@import './../node_modules/bulma/bulma'
+@import './../static/bulma'
 </style>
