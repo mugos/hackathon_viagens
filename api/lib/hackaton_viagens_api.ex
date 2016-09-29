@@ -10,7 +10,7 @@ defmodule HackathonViagensApi do
     children = [
       # Starts a worker by calling: HackatonViagensApi.Worker.start_link(arg1, arg2, arg3)
       # worker(HackatonViagensApi.Worker, [arg1, arg2, arg3]),
-      Plug.Adapters.Cowboy.child_spec(:http, HackathonViagensApi.Router.Router, [],
+      Plug.Adapters.Cowboy.child_spec(:http, HackathonViagensApi.Router, [],
       [
         port: Application.get_env(:hackathon_viagens_api, :port),
       ])
