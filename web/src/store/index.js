@@ -14,6 +14,9 @@ Vue.use(Vuex)
 const state = {
   // {text: 'Hey guy', self: false},
   messages: [],
+  profiles: [
+    { id: 1, name: 'Gabriel', nickname: 'gabriel', desc: 'Descricao', tags: ['total', 'dinner'], selected: false }
+  ],
   step: 0
 }
 

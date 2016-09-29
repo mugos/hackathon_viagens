@@ -12,10 +12,12 @@ import store from './store'
 
 // Pages
 import ChatPage from './pages/ChatPage'
+import MatchPage from './pages/MatchPage'
 
 // Routes
 const routes = [
-  { path: '/', component: ChatPage }
+  { path: '/', component: ChatPage },
+  { path: '/match', component: MatchPage }
 ]
 
 // Create the router

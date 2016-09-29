@@ -19,6 +19,11 @@ export default {
   props: {
     message: Object
   },
+  computed: {
+    last () {
+      return this.message.last
+    }
+  },
   //
   components: {
     MessageBox

@@ -9,13 +9,13 @@ export const sendBotMessage = ({ commit, state }) => {
 
   // Commit a new bot message
   if (mock[state.step] !== undefined) {
-    msg = mock[state.step]
+    msg = { text: mock[state.step], self: false }
   } else {
-    msg = mock.default
+    msg = { text: mock.default, last: true, self: false }
   }
 
-  // Send message
-  commit(types.RECEIVE_MESSAGE, {text: msg, self: false})
+  // Send messag
+  commit(types.RECEIVE_MESSAGE, msg)
   commit(types.NEXT_STEP)
 }
 

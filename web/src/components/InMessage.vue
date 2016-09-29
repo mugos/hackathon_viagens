@@ -6,7 +6,12 @@
           <img src="./../assets/robot.jpeg">
         </section>
         <message-box>
-          {{ message.text }}
+          <template v-if="!message.last">
+            {{ message.text }}
+          </template>
+          <template v-else>
+            <router-link to="/match">Veja os agentes</router-link>
+          </template>
         </message-box>
       </section>
     </section>
