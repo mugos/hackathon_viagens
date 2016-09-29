@@ -22,6 +22,14 @@ npm run e2e
 
 # run all tests
 npm test
+
+# Run docker
+
+# Install!!
+docker-compose run --rm web npm install
+
+# Run it
+docker-compose up web
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
