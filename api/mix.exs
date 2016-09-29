@@ -34,6 +34,7 @@ defmodule ChatWeb.Mixfile do
      {:socket, "~> 0.3.5"},
      {:postgrex, "~> 0.12.0"},
      {:ecto, git: "https://github.com/elixir-ecto/ecto"},
+     {:poison, "~> 2.2"},
      # {:guardian, "~> 0.13.0"}
      ]
   end

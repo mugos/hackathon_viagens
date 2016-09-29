@@ -34,7 +34,6 @@ defmodule ChatWebTest do
 
     assert ["not nice"] == ChatWeb.Schemas.Course |> ChatWeb.Repo.all
     |> Enum.map(&(&1.name))
-    |> IO.inspect
   end
 
   test "multiple queryes" do
@@ -48,6 +47,21 @@ defmodule ChatWebTest do
 
     assert ["nice", "haha  nice", "ooh nice"] == ChatWeb.Schemas.Course |> ChatWeb.Repo.all
     |> Enum.map(&(&1.name))
-    |> IO.inspect
+  end
+
+  test "/index returns a list of courses" do
+    {:ok, course} = %ChatWeb.Schemas.Course{name: "nice", description: "cool", price: "R$3,00"}
+    |> ChatWeb.Repo.insert
+
+    courses_as_json = [course]
+    |> Enum.map(&(Map.take(&1, [:name, :description, :price])))
+    |> Poison.encode!
+
+    conn = conn(:get, "/courses")
+
+    response = ChatWeb.Router.call(conn, @opts)
+
+    assert response.status == 200
+    assert response.resp_body == courses_as_json
   end
 end
