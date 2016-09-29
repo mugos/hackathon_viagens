@@ -17,3 +17,12 @@ config :chat_web, Repo,
   adapter: Ecto.Adapters.Postgres
 
 config :chat_web, ecto_repos: [ChatWeb.Repo]
+
+case Mix.env do
+  :test ->
+    config :chat_web, ChatWeb.Repo,
+      pool: Ecto.Adapters.SQL.Sandbox
+  _ ->
+end
+
+
