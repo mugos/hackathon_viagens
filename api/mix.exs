@@ -14,7 +14,7 @@ defmodule ChatWeb.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger, :plug],
+    [applications: [:logger, :cowboy, :plug],
      mod: {ChatWeb, []}]
   end
 
@@ -32,11 +32,12 @@ defmodule ChatWeb.Mixfile do
      {:plug, "~> 1.0"},
      {:cors_plug, "~> 1.1"},
      {:socket, "~> 0.3.5"},
-     {:erlbus, git: "https://github.com/cabol/erlbus.git", app: false},
+     # {:erlbus, git: "https://github.com/cabol/erlbus.git", app: false},
      {:rethinkdb, git: "https://github.com/hamiltop/rethinkdb-elixir"},
      # {:fluxter, "~> 0.1"},
      {:gproc, "~> 0.6.1"},
-     {:kafka_ex, "~> 0.5.0"},
-     {:guardian, "~> 0.13.0"}]
+     # {:kafka_ex, "~> 0.5.0"},
+     # {:guardian, "~> 0.13.0"}
+     ]
   end
 end

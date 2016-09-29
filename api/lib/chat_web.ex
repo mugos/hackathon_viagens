@@ -13,6 +13,9 @@ defmodule ChatWeb do
       Plug.Adapters.Cowboy.child_spec(:http, ChatWeb.Router, [], [
         port: Application.get_env(:chat_web, :port)
       ]),
+      worker(ChatWeb.Database, [
+        [host: "rethinkdb", port: 28015]
+      ]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
