@@ -1,4 +1,4 @@
-defmodule HackatonViagensApi do
+defmodule HackathonViagensApi do
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
@@ -10,6 +10,10 @@ defmodule HackatonViagensApi do
     children = [
       # Starts a worker by calling: HackatonViagensApi.Worker.start_link(arg1, arg2, arg3)
       # worker(HackatonViagensApi.Worker, [arg1, arg2, arg3]),
+      Plug.Adapters.Cowboy.child_spec(:http, HackathonViagensApi.Router.Router, [],
+      [
+        port: Application.get_env(:hackathon_viagens_api, :port),
+      ])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
