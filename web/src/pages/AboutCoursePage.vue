@@ -50,9 +50,9 @@
                 <section class="about__courses-item-desc">
                   {{ course.desc }}
                 </section>
-                <a class="button about__courses-item-link">
+                <router-link :to="'/course/' + area.slug" class="button about__courses-item-link">
                   Explorar curso
-                </a>
+                </router-link>
               <!-- end .about__courses-item -->
               </section>
             <!-- end .column.is-half -->

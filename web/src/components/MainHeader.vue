@@ -10,8 +10,8 @@
 
       <section class="nav main-header__menu-container">
         <section class="main-header__menu">
-          <a class="nav-item main-header__menu-item" href="#">Couses</a>
-          <a class="nav-item main-header__menu-item" href="#">Discovery</a>
+          <router-link to="/" class="nav-item main-header__menu-item" href="#">Courses</router-link>
+          <router-link to="/" class="nav-item main-header__menu-item" href="#">Discovery</router-link>
         </section>
       <!-- end .nav -->
       </section>
