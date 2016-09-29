@@ -3,8 +3,8 @@
     <header class="nav header">
       <section class="nav-center">
         <section class="header__logo">
-          BOT!!!
-        <!-- end .header__logo -->
+          <section class="header__logo-title">Jubileuzinho</section>
+          <section class="header__logo-subtitle">O assistente que te ajuda a encontrar seu agente perfeito ;D</section>
         </section>
       <!-- end .nav-center -->
       </section>
@@ -36,7 +36,8 @@ export default {
 
 .header
   &__logo
-    padding: 10px
-    font-size: 20px
-    font-weight: bold
+    &-title
+      padding: 5px 0 0
+      font-size: 20px
+      font-weight: bold
 </style>

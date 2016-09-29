@@ -3,7 +3,7 @@
     <section class="columns">
       <section class="column">
         <section class="in-message__photo">
-          <img src="./../assets/robot.jpeg">
+          <img src="./../assets/jubileu.jpg">
         </section>
         <message-box>
           <template v-if="!message.last">
@@ -43,6 +43,8 @@ export default {
     height: 50px
     border-radius: 100px
     overflow: hidden
+    img
+      height: 50px
   &__box
     box-shadow: 0px 1px 0px 0px rgba(50, 50, 50, 0.3)
     border-radius: 2px
