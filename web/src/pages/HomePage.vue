@@ -1,5 +1,5 @@
 <template>
-  <section class="home__container">
+  <section class="home__featured-content">
     <section class="container">
       <section class="home__featured">
         <section class="columns">
@@ -21,7 +21,7 @@
       </section>
     <!-- end .container -->
     </section>
-  <!-- end .home__container -->
+  <!-- end .home__featured-content -->
   </section>
 </template>
 
