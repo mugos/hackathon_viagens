@@ -40,7 +40,7 @@
           </section>
           <section class="columns is-mobile">
             <section v-for="course in area.courses" class="column is-half">
-              <section class="about__courses-item">
+              <section class="box about__courses-item">
                 <section class="about__courses-item-icon">
                   <img class="image is-64x64" :src="area.img">
                 </section>
