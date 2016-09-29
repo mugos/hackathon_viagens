@@ -77,7 +77,8 @@ export default {
   &-text
     text-align: center
   &-title
-    font: 25px bold Helvetica
+    font-size: 25px
+    font-weight: bold
     margin: 0 0 5px
   &-areas
     text-align: center

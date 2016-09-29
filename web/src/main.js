@@ -12,10 +12,12 @@ import store from './store'
 
 // Pages
 import HomePage from './pages/HomePage'
+import AboutCoursePage from './pages/AboutCoursePage'
 
 // Routes
 const routes = [
-  { path: '/', component: HomePage }
+  { path: '/', component: HomePage },
+  { path: '/about', component: AboutCoursePage }
 ]
 
 // Create the router
