@@ -10,6 +10,9 @@ defmodule ChatWeb do
     children = [
       # Starts a worker by calling: ChatWeb.Worker.start_link(arg1, arg2, arg3)
       # worker(ChatWeb.Worker, [arg1, arg2, arg3]),
+      Plug.Adapters.Cowboy.child_spec(:http, ChatWeb.Router, [], [
+        port: Application.get_env(:chat_web, :port)
+      ]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
