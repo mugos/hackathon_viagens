@@ -4,31 +4,33 @@ services:
     build: ./web
     ports:
       - 80:8080
-    working_dir: /chat_api
+    working_dir: /chat_web
     command: npm run dev
     volumes:
-      - ./web:/chat_api
+      - ./web:/chat_web
     links:
       - api
     depends_on:
       - api
+
   api:
     build: ./api
     ports:
       - 8000:80
-    working_dir: /chat_web
+    working_dir: /chat_api
     command: mix run --no-halt
     volumes:
-      - ./api:/chat_web
+      - ./api:/chat_api
     depends_on:
-      - rethinkdb-hack-trip # wait to be starded
+      - pg-hack-trip # wait to be starded
 
-  rethinkdb-hack-trip:
-    image: rethinkdb
+  pg-hack-trip:
+    image: postgres
     ports:
-      - 8080:8080
-      - 28015:28015
-      - 29015:29015
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=chat_web_repo
+
   ngrok:
     image: wernight/ngrok
     command: ngrok http web:8000
