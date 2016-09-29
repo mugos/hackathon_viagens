@@ -3,7 +3,7 @@ services:
   web:
     build: ./web
     ports:
-      - 80:8000
+      - 80:8080
     working_dir: /chat_api
     command: npm run dev
     volumes:
