@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  labels:
+    name: pg-hack-trip
+  name: pg-hack-trip
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: pg-hack-trip
+    spec:
+      containers:
+      - image: postgres
+        name: postgres
+        env:
+          - name: POSTGRES_DB
+            value: chat_web_repo
+          - name: PGDATA
+            value: /var/lib/postgresql/data/pgdata
+        ports:
+        - name: sd-postgres
+          containerPort: 5432
+          hostPort: 5432
+        volumeMounts:
+            - name: sd-pg-disk-hack-trip
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: sd-pg-disk-hack-trip
+          gcePersistentDisk:
+            pdName: pg-disk-hack-trip
+            fsType: ext4
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: pg-hack-trip
+  name: pg-hack-trip
+spec:
+  ports:
+    - port: 5432
+      targetPort: 5432
+  selector:
+    name: pg-hack-trip
