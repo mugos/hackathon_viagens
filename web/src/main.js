@@ -13,11 +13,13 @@ import store from './store'
 // Pages
 // import HomePage from './pages/HomePage'
 import AboutCoursePage from './pages/AboutCoursePage'
+import CoursePage from './pages/CoursePage'
 
 // Routes
 const routes = [
   // { path: '/', component: HomePage },
-  { path: '/', component: AboutCoursePage }
+  { path: '/', component: AboutCoursePage },
+  { path: '/course/:slug', component: CoursePage }
 ]
 
 // Create the router

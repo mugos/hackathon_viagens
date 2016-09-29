@@ -40,7 +40,7 @@
           </section>
           <section class="columns is-mobile">
             <section v-for="course in area.courses" class="column is-half">
-              <section class="about__courses-item">
+              <section class="box about__courses-item">
                 <section class="about__courses-item-icon">
                   <img class="image is-64x64" :src="area.img">
                 </section>
@@ -50,9 +50,9 @@
                 <section class="about__courses-item-desc">
                   {{ course.desc }}
                 </section>
-                <a class="button about__courses-item-link">
+                <router-link :to="'/course/' + area.slug" class="button about__courses-item-link">
                   Explorar curso
-                </a>
+                </router-link>
               <!-- end .about__courses-item -->
               </section>
             <!-- end .column.is-half -->
