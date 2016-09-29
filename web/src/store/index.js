@@ -13,7 +13,8 @@ Vue.use(Vuex)
 //
 const state = {
   // {text: 'Hey guy', self: false},
-  messages: []
+  messages: [],
+  step: 0
 }
 
 // Mutations that could happen
@@ -22,6 +23,9 @@ const mutations = {
   [types.RECEIVE_MESSAGE] (state, message) {
     // Push to the node of images
     state.messages.push(message)
+  },
+  [types.NEXT_STEP] (state) {
+    state.step++
   }
 }
 

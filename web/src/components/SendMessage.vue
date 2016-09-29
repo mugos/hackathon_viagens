@@ -21,6 +21,10 @@ export default {
       message: ''
     }
   },
+  created () {
+    // Dispatch the message
+    this.$store.dispatch('sendBotMessage')
+  },
   //
   methods: {
     sendMessage (e) {
