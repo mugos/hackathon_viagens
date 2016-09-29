@@ -1,8 +1,8 @@
-defmodule HackatonViagens.Mixfile do
+defmodule HackatonViagensApi.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :hackaton_viagens,
+    [app: :hackaton_viagens_api,
      version: "0.1.0",
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
@@ -15,7 +15,7 @@ defmodule HackatonViagens.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     [applications: [:logger],
-     mod: {HackatonViagens, []}]
+     mod: {HackatonViagensApi, []}]
   end
 
   # Dependencies can be Hex packages:
