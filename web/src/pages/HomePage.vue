@@ -11,11 +11,17 @@
               <section v-for="video in featuredVideos" class="column is-half">
                 HELLO
               </section>
+            <!-- end .columns.is-multiline -->
             </section>
+          <!-- end colum.is-half.home__featureds -->
           </section>
+        <!-- end .columns -->
         </section>
+      <!-- end .home__featured -->
       </section>
+    <!-- end .container -->
     </section>
+  <!-- end .home__container -->
   </section>
 </template>
 
