@@ -14,21 +14,21 @@ export default {
   ],
   areas: [
     {
-      title: 'Vendas',
+      title: 'Vendas (22)',
       courses: [
         { title: 'Tripdegree Atendimento One-to-One', desc: 'Aprenda sobre experiências altamente personalizadas para Viajantes', img: '' },
         { title: 'Tripdegree Atendimento One-to-One', desc: 'Aprenda sobre experiências altamente personalizadas para Viajantes', img: '' }
       ]
     },
     {
-      title: 'Pos-vendas',
+      title: 'Pos-vendas (12)',
       courses: [
         { title: 'Tripdegree Atendimento One-to-One', desc: 'Aprenda sobre experiências altamente personalizadas para Viajantes', img: '' },
         { title: 'Tripdegree Atendimento One-to-One', desc: 'Aprenda sobre experiências altamente personalizadas para Viajantes', img: '' }
       ]
     },
     {
-      title: 'Marketing Digital',
+      title: 'Marketing Digital (42)',
       courses: [
         { title: 'Tripdegree Atendimento One-to-One', desc: 'Aprenda sobre experiências altamente personalizadas para Viajantes', img: '' },
         { title: 'Tripdegree Atendimento One-to-One', desc: 'Aprenda sobre experiências altamente personalizadas para Viajantes', img: '' }
