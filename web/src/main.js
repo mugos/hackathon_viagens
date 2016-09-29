@@ -11,13 +11,13 @@ Vue.use(VueRouter)
 import store from './store'
 
 // Pages
-import HomePage from './pages/HomePage'
+// import HomePage from './pages/HomePage'
 import AboutCoursePage from './pages/AboutCoursePage'
 
 // Routes
 const routes = [
-  { path: '/', component: HomePage },
-  { path: '/about', component: AboutCoursePage }
+  // { path: '/', component: HomePage },
+  { path: '/', component: AboutCoursePage }
 ]
 
 // Create the router

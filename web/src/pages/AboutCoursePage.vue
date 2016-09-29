@@ -13,8 +13,6 @@
         <section class="about__banner-desc">
           Tenha as habilidades que estão em alta e são as mais procuradas pelas empresas de turismo.
           Explore diversos destinos e crie experiências incríveis.
-          Receba a melhor certificação do mercado.
-          Inicie sua carreira em Turismo com as melhores práticas.
         <!-- end .about__banner-desc -->
         </section>
       <!-- end .container -->
@@ -22,72 +20,46 @@
     <!-- end .about__banner -->
     </section>
 
-    <section class="about__program">
-      <section class="container">
-        <section class="about__program-title">
-          Como funcionam os programas Tripdegree?
+    <section class="about__search-container">
+      <form @submit="search">
+        <section class="container">
+          <input type="text" class="input about__search" placeholder="Search">
+          <button type="submit" class="button about__search-submit">Buscar</button>
+        <!-- end .container -->
         </section>
-        <section class="about__program-item">
-          <section class="about__program-item-icon">
-            <img class="image is-64x64" src="">
-          </section>
-          <section class="about__program-item-title">
-            Escolha seu programa Tripdegree
-          </section>
-          <section class="about__program-item-desc">
-            Cada programa é criado com as melhores práticas do mercado em parcerias com as empresas de turismo.
-          </section>
-        <!-- end .about__program-item -->
-        </section>
-      <!-- end .container -->
-      </section>
-    <!-- end .about__program -->
+      <!-- end form -->
+      </form>
+    <!-- end .about__search-container -->
     </section>
 
-    <section class="about__courses">
+    <section v-for="area in getAreas" class="about__courses">
       <section class="container">
-        <section class="columns is-mobile">
-          <section class="column is-half">
-            <section class="about__courses-item">
-              <section class="about__courses-item-icon">
-                <img class="image is-64x64" src="">
-              </section>
-              <section class="about__courses-item-title">
-                Tripdegree
-                Atendimento One-to-One
-              </section>
-              <section class="about__courses-item-desc">
-                Aprenda sobre experiências altamente personalizadas para Viajantes
-              </section>
-              <a class="button about__courses-item-link">
-                Explore os cursos
-              </a>
-            <!-- end .about__courses-item -->
-            </section>
-          <!-- end .column.is-half -->
+        <section class="about__courses-group">
+          <section class="about__courses-area-title">
+            {{ area.title }}
           </section>
-
-          <section class="column is-half">
-            <section class="about__courses-item">
-              <section class="about__courses-item-icon">
-                <img class="image is-64x64" src="">
+          <section class="columns is-mobile">
+            <section v-for="course in area.courses" class="column is-half">
+              <section class="about__courses-item">
+                <section class="about__courses-item-icon">
+                  <img class="image is-64x64" :src="area.img">
+                </section>
+                <section class="about__courses-item-title">
+                  {{ course.title }}
+                </section>
+                <section class="about__courses-item-desc">
+                  {{ course.desc }}
+                </section>
+                <a class="button about__courses-item-link">
+                  Explorar curso
+                </a>
+              <!-- end .about__courses-item -->
               </section>
-              <section class="about__courses-item-title">
-                Tripdegree
-                Cuba
-              </section>
-              <section class="about__courses-item-desc">
-                Tudo sobre o turismo de Cuba. Desde hotéis a experiências. 
-                Planeje os melhores destinos e pacotes.
-              </section>
-              <a class="button about__courses-item-link">
-                Explore os cursos
-              </a>
-            <!-- end .about__courses-item -->
+            <!-- end .column.is-half -->
             </section>
-          <!-- end .column.is-half -->
+          <!-- end .columns.is-mobile -->
           </section>
-        <!-- end .columns.is-mobile -->
+        <!-- end .about__courses-group -->
         </section>
       <!-- end .container -->
       </section>
@@ -106,8 +78,13 @@ export default {
   // Use the components
   components: {
   },
+  methods: {
+    search (e) {
+      e.preventDefault()
+    }
+  },
   computed: {
-    ...mapGetters(['featuredVideos', 'operationAreas'])
+    ...mapGetters(['getAreas', 'featuredVideos', 'operationAreas'])
   }
 }
 </script>
@@ -117,7 +94,6 @@ export default {
   &__banner
     color: #fff
     padding: 20px
-    height: 400px
     background: url(./../assets/mountains.jpg) center center
     &-title
       text-align: center
@@ -130,40 +106,35 @@ export default {
       margin: 0 0 10px
     &-desc
       font-size: 18px
-  &__program
-    text-align: center
-    padding: 10px
-    &-item
-      display: inline-block
-      vertical-align: top
-      padding: 10px
-      &-icon
-        img
-          margin: 0 auto
-      &-title
-        color: #2C3E50
-        font-weight: bold
-      &-desc
-        text-align: justify
+  &__search
+    margin: 0 0 5px
+    &-container
+      margin: 15px
+    &-submit
+      width: 100%
   &__courses
+    // margin: 0 0 30px
     padding: 10px
-    background: linear-gradient(#614385, #516395)
+    // background: linear-gradient(#614385, #516395)
+    background: #eaeaea
+    &-area-title
+      font-size: 16px
+      padding: 10px 0
     &-item
+      padding: 20px
       background: #fff
-      padding: 10px
+      text-align: center
       &-title
         color: #2C3E50
         font-weight: bold
-        text-align: center
         font-size: 15px 
-      &-desc
-        text-align: center
       &-icon
         margin: 0 0 5px
         img
           margin: 0 auto
+      &-desc
+        font-size: 12px
       &-link
-        display: block
         text-aling: center
-        margin: 5px 0 0
+        margin: 10px 0 0
 </style>

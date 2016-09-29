@@ -17,6 +17,7 @@ Vue.use(Vuex)
 const state = {
   //
   videos: mock.videos,
+  areas: mock.areas,
   operationAreas: mock.operationAreas
 }
 
