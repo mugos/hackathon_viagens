@@ -13,9 +13,9 @@
 
 <script>
 // Import components
-import InMessage from './InMessage'
-import OutMessage from './OutMessage'
-import SendMessage from './SendMessage'
+import InMessage from './../components/InMessage'
+import OutMessage from './../components/OutMessage'
+import SendMessage from './../components/SendMessage'
 
 //
 import { mapGetters } from 'vuex'

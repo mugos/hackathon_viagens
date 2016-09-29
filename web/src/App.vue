@@ -1,14 +1,9 @@
 <template>
-  <chat></chat>
+  <router-view></router-view>
 </template>
 
 <script>
-import Chat from './components/Chat'
-
 export default {
-  components: {
-    Chat
-  }
 }
 </script>
 
