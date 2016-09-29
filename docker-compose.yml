@@ -30,6 +30,7 @@ services:
       - 5432:5432
     environment:
       - POSTGRES_DB=chat_web_repo
+      - MIX_ENV=pg
 
   ngrok:
     image: wernight/ngrok
