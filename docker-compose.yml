@@ -3,7 +3,7 @@ services:
   web:
     build: ./web
     ports:
-      - 80:8000
+      - 80:8080
     working_dir: /chat_api
     command: npm run dev
     volumes:
@@ -12,7 +12,6 @@ services:
       - api
     depends_on:
       - api
-
   api:
     build: ./api
     ports:
@@ -23,17 +22,14 @@ services:
       - ./api:/chat_web
     depends_on:
       - rethinkdb # wait to be starded
-
   rethinkdb:
     image: rethinkdb
     ports:
       - 8080:8080
       - 28015:28015
       - 29015:29015
-
   ngrok:
     image: wernight/ngrok
     command: ngrok http web:8000
     depends_on:
       - web
-
