@@ -28,11 +28,14 @@ export default {
   //
   methods: {
     sendMessage (e) {
-      // Dispatch the message
-      this.$store.dispatch('sendMessage', { text: this.message, self: true })
+      // Check empty message
+      if (this.message !== '') {
+        // Dispatch the message
+        this.$store.dispatch('sendMessage', { text: this.message, self: true })
 
-      // Reset the value
-      this.message = ''
+        // Reset the value
+        this.message = ''
+      }
 
       // Prevent the default event
       e.preventDefault()
