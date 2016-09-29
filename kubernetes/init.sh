@@ -28,10 +28,10 @@ dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-ngrok:latest"
 echo "docker run --rm -ti -p 80:80 -p 443:443 gcr.io/yebo-project/hackathon-viagens-web:latest"
 echo "docker run --rm -ti -p 80:80 -p 443:443 gcr.io/yebo-project/hackathon-viagens-api:latest"
 
-# dg kubectl create -f ./web.yaml
-# dg kubectl create -f ./api.yaml
-# dg kubectl create -f ./rethinkdb.yaml
-# dg kubectl create -f ./ngrok.yaml
+echo "dg kubectl create -f ./web.yaml"
+echo "dg kubectl create -f ./api.yaml"
+echo "dg kubectl create -f ./rethinkdb.yaml"
+echo "dg kubectl create -f ./ngrok.yaml"
 
 # dg kubectl delete -f ./web.yaml
 
