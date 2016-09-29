@@ -16,7 +16,7 @@ export default {
   // Nao, por que?
   7: 'Tenho alguns amigos que dizem que Dubai tem um otimo centro de paraquedismo.',
   // Quem sao eles?
-  8: 'Eles sao todos agentes de viages especilizados em viagens radicais para Dubai, quer que eu te apresente?',
+  8: 'Eles sao todos agentes de viagens especilizados em viagens radicais para Dubai, quer que eu te apresente?',
   // Pode ser
   default: 'Ok...'
 }
