@@ -1,2 +1,2 @@
 FROM wernight/ngrok
-CMD ngrok http hackathon-viagens:80
+CMD ngrok http hackathon-viagens-api:80

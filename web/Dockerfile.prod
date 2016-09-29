@@ -1,11 +1,29 @@
-# From node
-FROM node
+# Use NodeJS Image
+FROM nginx:alpine
 
-# Install Vue CLI
-RUN npm install -g vue-cli
+# Add for nginx
+# RUN addgroup -S nginx
+# RUN adduser -D -S -h /var/cache/nginx -s /sbin/nologin -G nginx nginx
 
-# Expose the port
-EXPOSE 8080
+# Set nginx config
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+ADD ./server/app.conf /etc/nginx/conf.d/app.conf
 
-# Command
-CMD npm run prod
+# Add start script
+ADD ./server/start.sh /start.sh
+RUN chmod 755 /start.sh
+
+# Set the compiled app as workdir
+WORKDIR /app
+
+# Move the compiled folder
+ADD ./dist/ /app/
+
+# Add the ssl certificates
+ADD ./server/certs/ /certs
+
+EXPOSE 443 80
+
+# Start nginx
+CMD ["/bin/sh", "/start.sh"]
+

@@ -19,6 +19,8 @@ dg() {
 
 VERSION=$(cat ../VERSION)
 
+docker-compose run --rm web npm run build --production
+
 docker-compose -f ../production.yml build
 
 docker tag hackathon-viagens-web "gcr.io/yebo-project/hackathon-viagens-web:$VERSION"
@@ -32,6 +34,9 @@ dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-api:latest"
 
 dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-web:$VERSION"
 dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-web:latest"
+
+echo "docker run --rm -ti -p 80:80 -p 443:443 gcr.io/yebo-project/hackathon-viagens-web:v$VERSION"
+echo "docker run --rm -ti -p 80:80 -p 443:443 gcr.io/yebo-project/hackathon-viagens-api:v$VERSION"
 
 echo "dg kubectl rolling-update hackathon-viagens-api --image=\"gcr.io/yebo-project/hackathon-viagens-api:$VERSION\""
 echo "dg kubectl rolling-update hackathon-viagens-web --image=\"gcr.io/yebo-project/hackathon-viagens-web:$VERSION\""
