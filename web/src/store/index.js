@@ -5,28 +5,22 @@ import Vuex from 'vuex'
 // Vuex stuff
 import * as getters from './getters'
 import * as actions from './actions'
-import * as types from './mutation-types'
+// import * as types from './mutation-types'
+
+// MOCK!!!
+import mock from './mock'
 
 //
 Vue.use(Vuex)
 
 //
 const state = {
-  // {text: 'Hey guy', self: false},
-  messages: [],
-  step: 0
+  //
+  videos: mock.videos
 }
 
 // Mutations that could happen
 const mutations = {
-  //
-  [types.RECEIVE_MESSAGE] (state, message) {
-    // Push to the node of images
-    state.messages.push(message)
-  },
-  [types.NEXT_STEP] (state) {
-    state.step++
-  }
 }
 
 // Export all of them
