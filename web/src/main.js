@@ -11,11 +11,11 @@ Vue.use(VueRouter)
 import store from './store'
 
 // Pages
-import ChatPage from './pages/ChatPage'
+import HomePage from './pages/HomePage'
 
 // Routes
 const routes = [
-  { path: '/', component: ChatPage }
+  { path: '/', component: HomePage }
 ]
 
 // Create the router
