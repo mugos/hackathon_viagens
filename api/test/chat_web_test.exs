@@ -1,7 +1,13 @@
 defmodule ChatWebTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
+  use Plug.Test
+
   doctest ChatWeb
 
+  @opts ChatWeb.Router.init([])
+  # Define a higher timeout
+  # @moduletag timeout: 300
+  #
   test "the truth" do
     assert 1 + 1 == 2
   end
@@ -9,7 +15,7 @@ defmodule ChatWebTest do
   test "handshake" do
     conn = conn(:get, "/hello")
 
-    conn = Peperoni.Router.call(conn, @opts)
+    conn = ChatWeb.Router.call(conn, @opts)
 
     assert conn.state == :set
     assert conn.status == 200

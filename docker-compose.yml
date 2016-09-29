@@ -16,7 +16,7 @@ services:
   api:
     build: ./api
     ports:
-      - 8000:8000
+      - 8000:80
     working_dir: /chat_web
     command: mix run --no-halt
     volumes:
