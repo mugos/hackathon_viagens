@@ -42,7 +42,7 @@
         <section class="home__operations-areas">
           <section v-for="area in operationAreas" class="home__operations-area">
             <section class="home__operations-area-icon">
-              <img :src="area.icon">
+              <img class="image is-96x96" :src="area.icon">
             </section>
             <section class="home__operations-area-title">{{ area.title }}</section>
           </section>
@@ -83,4 +83,9 @@ export default {
     text-align: center
   &-area
     display: inline-block
+    margin: 10px
+  &-area-icon
+    overflow: hidden
+    border-radius: 100px
+    margin: 0 0 10px
 </style>
