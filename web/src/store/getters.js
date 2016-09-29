@@ -8,3 +8,8 @@ export const featuredVideos = (state) => {
 export const operationAreas = (state) => {
   return state.operationAreas
 }
+
+// Get courses
+export const getAreas = (state) => {
+  return state.areas
+}

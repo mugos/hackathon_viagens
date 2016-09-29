@@ -1,16 +1,19 @@
 <template>
   <section class="main-header__container">
     <section class="container"> 
-      <section class="columns is-mobile">
-        <section class="column is-narrow">
-          <button class="button main-header__open">Button</button>
+      <section class="nav">
+        <section class="main-header__logo">
+          Unitravel
         </section>
-        <section class="column">
-          <section class="main-header__title">
-            Home
-          </section>
+      <!-- end .nav -->
+      </section>
+
+      <section class="nav main-header__menu-container">
+        <section class="main-header__menu">
+          <a class="nav-item main-header__menu-item" href="#">Couses</a>
+          <a class="nav-item main-header__menu-item" href="#">Discovery</a>
         </section>
-      <!-- end .columns -->
+      <!-- end .nav -->
       </section>
     <!-- end .container -->
     </section>
@@ -27,11 +30,17 @@ export default {
 <style lang="sass">
 .main-header
   &__container
-    background: #eaeaea
-    padding: 5px 0
-    border-bottom: 1px solid #bdbdbd
-  &__open
-    background: #000
-  &__title
+    background: #fff
+  &__logo
+    margin: 0 auto
+    padding: 10px
+    font-weight: bold
+    font-size: 20px
+  &__menu
     text-align: center
+    padding: 5px 0
+    &-container
+      background: #f1f1f1
+    &-item
+      display: inline-block
 </style>

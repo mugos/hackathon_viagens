@@ -11,5 +11,28 @@ export default {
   // Oprations areas
   operationAreas: [
     { title: 'Pos venda', icon: '' }
+  ],
+  areas: [
+    {
+      title: 'Vendas',
+      courses: [
+        { title: 'Tripdegree Atendimento One-to-One', desc: 'Aprenda sobre experiências altamente personalizadas para Viajantes', img: '' },
+        { title: 'Tripdegree Atendimento One-to-One', desc: 'Aprenda sobre experiências altamente personalizadas para Viajantes', img: '' }
+      ]
+    },
+    {
+      title: 'Pos-vendas',
+      courses: [
+        { title: 'Tripdegree Atendimento One-to-One', desc: 'Aprenda sobre experiências altamente personalizadas para Viajantes', img: '' },
+        { title: 'Tripdegree Atendimento One-to-One', desc: 'Aprenda sobre experiências altamente personalizadas para Viajantes', img: '' }
+      ]
+    },
+    {
+      title: 'Marketing Digital',
+      courses: [
+        { title: 'Tripdegree Atendimento One-to-One', desc: 'Aprenda sobre experiências altamente personalizadas para Viajantes', img: '' },
+        { title: 'Tripdegree Atendimento One-to-One', desc: 'Aprenda sobre experiências altamente personalizadas para Viajantes', img: '' }
+      ]
+    }
   ]
 }
