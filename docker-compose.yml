@@ -4,10 +4,10 @@ services:
     build: ./web
     ports:
       - 80:8000
-    working_dir: /hackaton_viagens_web
+    working_dir: /chat_api
     command: npm run dev
     volumes:
-      - ./web:/hackaton_viagens_web
+      - ./web:/chat_api
     links:
       - api
     depends_on:
@@ -17,10 +17,10 @@ services:
     build: ./api
     ports:
       - 8000:8000
-    working_dir: /hackaton_viagens_api
+    working_dir: /chat_web
     command: mix run --no-halt
     volumes:
-      - ./api:/hackaton_viagens_api
+      - ./api:/chat_web
     depends_on:
       - rethinkdb # wait to be starded
 
