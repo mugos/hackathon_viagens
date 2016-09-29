@@ -7,5 +7,9 @@ export default {
     { title: 'Video 3', url: 'some-url', desc: 'Nice Video', author: 'HACKATOUR' },
     { title: 'Video 4', url: 'some-url', desc: 'Nice Video', author: 'HACKATOUR' },
     { title: 'Video 5', url: 'some-url', desc: 'Nice Video', author: 'HACKATOUR' }
+  ],
+  // Oprations areas
+  operationAreas: [
+    { title: 'Pos venda', icon: '' }
   ]
 }

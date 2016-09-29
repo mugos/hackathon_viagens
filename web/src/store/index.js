@@ -16,7 +16,8 @@ Vue.use(Vuex)
 //
 const state = {
   //
-  videos: mock.videos
+  videos: mock.videos,
+  operationAreas: mock.operationAreas
 }
 
 // Mutations that could happen
