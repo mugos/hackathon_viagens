@@ -1,9 +1,19 @@
 <template>
-  <router-view></router-view>
+  <section class="app__container">
+    <main-header></main-header>
+    <router-view></router-view>
+  </section>
 </template>
 
 <script>
+// Components
+import MainHeader from './components/MainHeader'
+
+//
 export default {
+  components: {
+    MainHeader
+  }
 }
 </script>
 
