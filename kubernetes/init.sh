@@ -12,6 +12,10 @@ dg() {
     --volumes-from gcloud-config yurifl/gcloud $@
 }
 
+dg gcloud compute disks list
+echo "dg gcloud compute disks delete pg-disk-hack-trip"
+echo "dg gcloud compute disks create --size=100GB --zone=us-east1-d pg-disk-hack-trip"
+
 docker-compose run --rm web npm run build --production
 
 docker-compose -f ../production.yml build
@@ -30,7 +34,7 @@ echo "docker run --rm -ti -p 80:80 -p 443:443 gcr.io/yebo-project/hackathon-viag
 
 # dg kubectl create -f ./web.yaml
 # dg kubectl create -f ./api.yaml
-# dg kubectl create -f ./rethinkdb.yaml
+# dg kubectl create -f ./pg.yaml
 # dg kubectl create -f ./ngrok.yaml
 
 # dg kubectl delete -f ./web.yaml
