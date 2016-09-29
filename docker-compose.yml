@@ -21,8 +21,9 @@ services:
     volumes:
       - ./api:/chat_web
     depends_on:
-      - rethinkdb # wait to be starded
-  rethinkdb:
+      - rethinkdb-hack-trip # wait to be starded
+
+  rethinkdb-hack-trip:
     image: rethinkdb
     ports:
       - 8080:8080

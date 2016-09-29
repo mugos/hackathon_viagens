@@ -12,6 +12,8 @@ dg() {
     --volumes-from gcloud-config yurifl/gcloud $@
 }
 
+docker-compose run --rm web npm run build --production
+
 docker-compose -f ../production.yml build
 
 docker tag hackathon-viagens-web "gcr.io/yebo-project/hackathon-viagens-web:latest"
@@ -20,12 +22,17 @@ docker tag hackathon-viagens-api "gcr.io/yebo-project/hackathon-viagens-api:late
 dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-api:latest"
 dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-web:latest"
 
-docker tag hackathon-viagens-ngrok "gcr.io/yebo-project/hackathon-viagens-ngrok:$VERSION"
 docker tag hackathon-viagens-ngrok "gcr.io/yebo-project/hackathon-viagens-ngrok:latest"
-dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-ngrok:$VERSION"
 dg gcloud docker push "gcr.io/yebo-project/hackathon-viagens-ngrok:latest"
 
-dg kubectl create -f ./web.yaml
+echo "docker run --rm -ti -p 80:80 -p 443:443 gcr.io/yebo-project/hackathon-viagens-web:latest"
+echo "docker run --rm -ti -p 80:80 -p 443:443 gcr.io/yebo-project/hackathon-viagens-api:latest"
+
+# dg kubectl create -f ./web.yaml
+# dg kubectl create -f ./api.yaml
+# dg kubectl create -f ./rethinkdb.yaml
+# dg kubectl create -f ./ngrok.yaml
+
 # dg kubectl delete -f ./web.yaml
 
 dg kubectl get svc

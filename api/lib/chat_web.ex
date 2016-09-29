@@ -14,7 +14,7 @@ defmodule ChatWeb do
         port: Application.get_env(:chat_web, :port)
       ]),
       worker(ChatWeb.Database, [
-        [host: "rethinkdb", port: 28015]
+        [host: "rethinkdb-hack-trip", port: 28015]
       ]),
     ]
 

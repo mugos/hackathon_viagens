@@ -4,13 +4,13 @@ services:
     image: hackathon-viagens-web
     build:
       context: ./web
-      dockerfile: ./web/Dockerfile.prod
+      dockerfile: ./Dockerfile.prod
 
   api:
     image: hackathon-viagens-api
     build:
       context: ./api
-      dockerfile: ./api/Dockerfile.prod
+      dockerfile: ./Dockerfile.prod
 
   ngrok:
     image: hackathon-viagens-ngrok
