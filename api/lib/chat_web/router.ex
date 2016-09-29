@@ -13,7 +13,8 @@ defmodule ChatWeb.Router do
   """
   get "/courses" do
     courses = Repo.all(Course)
-    |> ChatWeb.Types.encode
+    |> IO.inspect
+    # |> ChatWeb.Types.encode
 
     # |> Enum.map(&(Map.take(&1, [:name, :description, :price])))
     # |> Poison.encode!
