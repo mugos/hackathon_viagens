@@ -2,9 +2,9 @@
 export default {
   0: 'Oi, qual foi a ultima viagem que voce fez?',
   // Fui para o Orlando ano passado
-  1: 'Voce disse pipoca? Pipoca na manteiga? Oppsss.... Como foi sua experiencia?',
+  1: 'Como foi sua experiencia?',
   // Nao muito boa, era alta temporada e estava muito cheio
-  2: 'O que voce gosta de fazer?',
+  2: 'Hmm.. Entendi, O que voce gosta de fazer?',
   // Gosto de motocross
   3: 'Voce fez motocross em Orlando?',
   // Sim

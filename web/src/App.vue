@@ -3,7 +3,7 @@
     <header class="nav header">
       <section class="nav-center">
         <section class="header__logo">
-          <section class="header__logo-title">Jubileuzinho</section>
+          <section class="header__logo-title">Hi, Travel</section>
           <section class="header__logo-subtitle">O assistente que te ajuda a encontrar seu agente perfeito ;D</section>
         </section>
       <!-- end .nav-center -->
