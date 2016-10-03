@@ -1,6 +1,12 @@
 //
 import * as types from './mutation-types'
 import mock from './mock'
+import Vue from 'vue'
+
+// Request
+const req = function (path) {
+  return Vue.http.get(`http://127.0.0.1:8000/${path}`)
+}
 
 //
 export const sendBotMessage = ({ commit, state }) => {
@@ -20,10 +26,13 @@ export const sendBotMessage = ({ commit, state }) => {
 }
 
 //
-export const sendMessage = (store, message) => {
-  // Just commit it
-  store.commit(types.RECEIVE_MESSAGE, message)
+export const sendMessage = ({commit, state}, message) => {
+  // Mock
+  // store.commit(types.RECEIVE_MESSAGE, message)
+  // sendBotMessage(store)
 
-  //
-  sendBotMessage(store)
+  req('hello').then(res => {
+    const msg = { text: res.body, self: false }
+    commit(types.RECEIVE_MESSAGE, msg)
+  })
 }

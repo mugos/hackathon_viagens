@@ -6,6 +6,7 @@ defmodule ChatWeb.Router do
   plug :dispatch
 
   plug Plug.Logger
+  plug CORSPlug
 
 
   @doc """

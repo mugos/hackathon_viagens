@@ -1,0 +1,4 @@
+NEXT: identify user
+1 - user sends initial msg
+2 - backsend answer with uniq token
+3 - every msg send its token to backend to identification
